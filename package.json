@@ -1,0 +1,37 @@
+{
+  "name": "@forchange/browser",
+  "version": "1.0.2",
+  "description": "基于 browser-update 封装的浏览器更新检测方案",
+  "main": "./dist/index.esm.js",
+  "types": "./index.d.ts",
+  "scripts": {
+    "clean": "rm -rf ./dist",
+    "prebuild": "yarn clean",
+    "build:esm": "rollup -c build/rollup.config.esm.js",
+    "build": "yarn build:esm"
+  },
+  "publishConfig": {
+    "registry": "https://nexus.forchange.cn/repository/npm-private/"
+  },
+  "keywords": [
+    "forchange",
+    "browser-update"
+  ],
+  "author": "xiangjun <xiangjun@forchange.tech>",
+  "license": "MIT",
+  "files": [
+    "/dist",
+    "*.d.ts",
+    "README.md"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.12.9",
+    "@babel/preset-env": "^7.12.7",
+    "@rollup/plugin-babel": "^5.2.2",
+    "@rollup/plugin-commonjs": "^17.0.0",
+    "@rollup/plugin-node-resolve": "^11.0.0",
+    "rollup": "^2.34.2",
+    "rollup-plugin-terser": "^7.0.2"
+  }
+}
