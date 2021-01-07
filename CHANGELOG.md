@@ -1,4 +1,9 @@
-## 1.0.3 (2021-01-07)
+## 1.0.4 (2021-01-07)
+
+
+### Bug Fixes
+
+* **测试:** test ([a58a6cd](https://github.com/ajunzai/pack-browser-update/commit/a58a6cdad7696b250b8a49459fdc8bc3104b3439))
 
 
 ### Features
