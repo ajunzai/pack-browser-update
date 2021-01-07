@@ -5,7 +5,7 @@ interface TextOption {
   btnIgnore: string
 }
 
-interface Options {
+interface BrowserVersion {
   chrome?: number | string | boolean,
   firefox?: number | string | boolean,
   edge?: number | string | boolean,
@@ -13,6 +13,13 @@ interface Options {
   safari?: number | string | boolean,
   ie?: number | string | boolean,
   opera?: number | string | boolean,
+  samsung?: number | string,
+  yandex?: number | string,
+  vivaldi?: number | string,
+}
+
+interface Options {
+  required?: BrowserVersion
   reminder?: number,
   reminderClosed?: number,
   lang?: string,
@@ -22,4 +29,9 @@ interface Options {
   url?: string
 }
 
-export default function browserUpdate(options: Options):void
+declare global {
+  interface Window {
+    browserUp: (options?: Options) => void
+  }
+}
+export default Window

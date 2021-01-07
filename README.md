@@ -1,6 +1,9 @@
 # 浏览器更新
 基于 browser-update 封装的浏览器更新检测方案
 
+## Preview
+![](assets/A617C4DA-2798-4415-981E-868845CF5549.png)
+
 ## 安装
 ```sh
 npm install @forchange/browser --save
@@ -16,6 +19,15 @@ yarn add @forchange/browser --save
 ```javascript
 import browserUpdate from '@forchange/browser'
 browserUpdate(options)
+```
+
+```html
+<!-- 引入ui样式 -->
+<link rel="stylesheet" type="text/css" href="https://res.pandateacher.com/YU5EVOAS1608262413089.css">
+<!-- 引入脚本 -->
+<script src="https://res.pandateacher.com/SFGIRZ1S1608261981445.umd"></script>
+<!-- 调用 -->
+<script>window.browserUp({required: {chrome:false}})</script>
 ```
 
 #### options配置项
@@ -34,7 +46,10 @@ browserUpdate(options)
     uc:-1,
     safari:-1,
     ie: false,
-    opera: -1
+    opera: -1,
+    yandex: -3,
+    vivaldi: '1.95',
+    samsung: '12.1'
   },
   reminder:20, // x小时后重复显示通知 0为一直显示
   reminderClosed:150, // x小时后重复显示通知，即使用户已明确关闭
@@ -62,7 +77,15 @@ text: {
 #### css样式
 browser-update默认设置了提示的样式，您可以使用自己的css样式来覆盖他们。为来确保正确覆盖您需要额外向您的样式规则添加一些选择器，例如：
 ```css
-body .buorg { font-size:20px}
+body .buorg { 
+  font-size:20px
+}
+```
+全局样式加上屏蔽test生成报错元素
+```css
+.buorg .buorg-test {
+  display: none;
+}
 ```
 
 #### 测试  

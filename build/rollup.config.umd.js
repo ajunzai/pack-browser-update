@@ -5,13 +5,14 @@ import { terser } from 'rollup-plugin-terser';
 export default {
   input: 'index.js',
   output: {
-    file: 'dist/index.esm.js',
-    format: 'es'
+    file: 'dist/index.umd.js',
+    format: 'umd',
+    name: 'browserUp'
   },
   plugins: [
-    resolve(),
     commonjs(),
-    babel({ exclude: 'node_modules/**' }),
+    resolve(),
+    babel({ exclude: 'node_modules/**', babelHelpers: 'bundled' }),
     terser()
   ]
 }
