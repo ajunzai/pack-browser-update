@@ -1,6 +1,6 @@
 {
   "name": "shefa-browser",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "基于 browser-update 封装的浏览器更新检测方案",
   "main": "./dist/index.esm.js",
   "types": "./index.d.ts",
